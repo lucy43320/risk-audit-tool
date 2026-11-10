@@ -116,8 +116,9 @@ with tab1:
     f2 = st.file_uploader("上传表2（凭证表）", type=["xlsx", "xls"])
 
     if f1 and f2:
-        df1 = pd.read_excel(f1)
-        df2 = pd.read_excel(f2)
+        df1 = pd.read_excel(uploaded_file1, engine="openpyxl")
+        df2 = pd.read_excel(uploaded_file2, engine="openpyxl")
+
         st.divider()
 
         colA, colB = st.columns(2)
